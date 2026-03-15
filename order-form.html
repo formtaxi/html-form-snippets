@@ -1,0 +1,65 @@
+<!--
+  Form.taxi – Order / Booking Form Snippet
+  ==========================================
+  A multi-field form for orders, bookings, or reservations.
+  Includes date picker, select dropdown, number input, and text fields.
+
+  Setup:
+  1. Replace the action URL with your Form.taxi endpoint URL
+  2. Adjust field names, options, and the _redirect URL to fit your use case
+  3. Style the form to match your site's design
+
+  Docs: https://docs.form.taxi
+-->
+
+<form action="https://form.taxi/s/FORM_CODE" method="POST">
+
+  <!-- Spam protection: honeypot field. Keep this hidden. -->
+  <input type="text" name="_honeypot" style="display:none" tabindex="-1" autocomplete="off">
+
+  <!-- Optional: redirect after successful submission -->
+  <input type="hidden" name="_redirect" value="https://yoursite.com/order-confirmed">
+
+  <div>
+    <label for="name">Full Name</label>
+    <input type="text" id="name" name="name" required>
+  </div>
+
+  <div>
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+  </div>
+
+  <div>
+    <label for="phone">Phone</label>
+    <input type="tel" id="phone" name="phone">
+  </div>
+
+  <div>
+    <label for="date">Preferred Date</label>
+    <input type="date" id="date" name="date" required>
+  </div>
+
+  <div>
+    <label for="time">Preferred Time</label>
+    <select id="time" name="time" required>
+      <option value="">– Please select –</option>
+      <option value="morning">Morning (9:00–12:00)</option>
+      <option value="afternoon">Afternoon (12:00–17:00)</option>
+      <option value="evening">Evening (17:00–21:00)</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="guests">Number of Guests</label>
+    <input type="number" id="guests" name="guests" min="1" max="50" value="1" required>
+  </div>
+
+  <div>
+    <label for="notes">Special Requests</label>
+    <textarea id="notes" name="notes" rows="3"></textarea>
+  </div>
+
+  <button type="submit">Submit Booking</button>
+
+</form>

@@ -1,0 +1,67 @@
+<!--
+  Form.taxi – Support / Ticket Form Snippet
+  ============================================
+  A categorized support request form with priority selection.
+  Useful for help desks, bug reports, or customer service.
+
+  Setup:
+  1. Replace the action URL with your Form.taxi endpoint URL
+  2. Adjust categories, priorities, and the _redirect URL
+  3. Style the form to match your site's design
+
+  Docs: https://docs.form.taxi
+-->
+
+<form action="https://form.taxi/s/FORM_CODE" method="POST">
+
+  <!-- Spam protection: honeypot field. Keep this hidden. -->
+  <input type="text" name="_honeypot" style="display:none" tabindex="-1" autocomplete="off">
+
+  <!-- Optional: redirect after successful submission -->
+  <input type="hidden" name="_redirect" value="https://yoursite.com/ticket-received">
+
+  <div>
+    <label for="name">Your Name</label>
+    <input type="text" id="name" name="name" required>
+  </div>
+
+  <div>
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+  </div>
+
+  <div>
+    <label for="category">Category</label>
+    <select id="category" name="category" required>
+      <option value="">– Please select –</option>
+      <option value="bug">Bug Report</option>
+      <option value="feature">Feature Request</option>
+      <option value="billing">Billing / Account</option>
+      <option value="general">General Question</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="priority">Priority</label>
+    <select id="priority" name="priority" required>
+      <option value="low">Low</option>
+      <option value="medium" selected>Medium</option>
+      <option value="high">High</option>
+      <option value="urgent">Urgent</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="subject">Subject</label>
+    <input type="text" id="subject" name="subject" required>
+  </div>
+
+  <div>
+    <label for="description">Description</label>
+    <textarea id="description" name="description" rows="6" required
+      placeholder="Please describe your issue in detail…"></textarea>
+  </div>
+
+  <button type="submit">Submit Ticket</button>
+
+</form>

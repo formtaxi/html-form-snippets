@@ -1,0 +1,44 @@
+<!--
+  Form.taxi – Feedback Form Snippet
+  ===================================
+  A feedback form with a star rating (1–5) and a comment field.
+  Uses radio buttons for the rating, which submit as a numeric value.
+
+  Setup:
+  1. Replace the action URL with your Form.taxi endpoint URL
+  2. Adjust the _redirect URL to your thank-you page
+  3. Style the form to match your site's design
+
+  Docs: https://docs.form.taxi
+-->
+
+<form action="https://form.taxi/s/FORM_CODE" method="POST">
+
+  <!-- Spam protection: honeypot field. Keep this hidden. -->
+  <input type="text" name="_honeypot" style="display:none" tabindex="-1" autocomplete="off">
+
+  <!-- Optional: redirect after successful submission -->
+  <input type="hidden" name="_redirect" value="https://yoursite.com/thank-you">
+
+  <fieldset>
+    <legend>How would you rate your experience?</legend>
+    <label><input type="radio" name="rating" value="1" required> 1 – Poor</label>
+    <label><input type="radio" name="rating" value="2"> 2 – Fair</label>
+    <label><input type="radio" name="rating" value="3"> 3 – Good</label>
+    <label><input type="radio" name="rating" value="4"> 4 – Very Good</label>
+    <label><input type="radio" name="rating" value="5"> 5 – Excellent</label>
+  </fieldset>
+
+  <div>
+    <label for="comment">Comments (optional)</label>
+    <textarea id="comment" name="comment" rows="4"></textarea>
+  </div>
+
+  <div>
+    <label for="email">Email (optional, if you'd like a reply)</label>
+    <input type="email" id="email" name="email">
+  </div>
+
+  <button type="submit">Submit Feedback</button>
+
+</form>

@@ -1,0 +1,30 @@
+<!--
+  Form.taxi – Newsletter Signup Snippet
+  =======================================
+  A minimal email signup form, ideal for newsletter opt-ins,
+  lead magnets, or waitlists.
+
+  Setup:
+  1. Replace the action URL with your Form.taxi endpoint URL
+  2. Adjust the _redirect URL to your confirmation page
+  3. Style the form to match your site's design
+
+  Docs: https://docs.form.taxi
+-->
+
+<form action="https://form.taxi/s/FORM_CODE" method="POST">
+
+  <!-- Spam protection: honeypot field. Keep this hidden. -->
+  <input type="text" name="_honeypot" style="display:none" tabindex="-1" autocomplete="off">
+
+  <!-- Optional: redirect after successful submission -->
+  <input type="hidden" name="_redirect" value="https://yoursite.com/subscribed">
+
+  <div>
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email" placeholder="you@example.com" required>
+  </div>
+
+  <button type="submit">Subscribe</button>
+
+</form>

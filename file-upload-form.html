@@ -1,0 +1,55 @@
+<!--
+  Form.taxi – File Upload Form Snippet
+  ======================================
+  A form with file attachment support. Note the enctype attribute,
+  which is required for file uploads.
+
+  Setup:
+  1. Replace the action URL with your Form.taxi endpoint URL
+  2. Adjust the accepted file types and size limits as needed
+  3. Adjust the _redirect URL to your thank-you page
+  4. Style the form to match your site's design
+
+  Important:
+  - The enctype="multipart/form-data" attribute is REQUIRED for file uploads
+  - Check your Form.taxi plan for file size limits
+
+  Docs: https://docs.form.taxi
+-->
+
+<form action="https://form.taxi/s/FORM_CODE" method="POST" enctype="multipart/form-data">
+
+  <!-- Spam protection: honeypot field. Keep this hidden. -->
+  <input type="text" name="_honeypot" style="display:none" tabindex="-1" autocomplete="off">
+
+  <!-- Optional: redirect after successful submission -->
+  <input type="hidden" name="_redirect" value="https://yoursite.com/thank-you">
+
+  <div>
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" required>
+  </div>
+
+  <div>
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+  </div>
+
+  <div>
+    <label for="subject">Subject</label>
+    <input type="text" id="subject" name="subject" required>
+  </div>
+
+  <div>
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="4" required></textarea>
+  </div>
+
+  <div>
+    <label for="attachment">Attachment</label>
+    <input type="file" id="attachment" name="attachment" accept=".pdf,.doc,.docx,.jpg,.png">
+  </div>
+
+  <button type="submit">Send with Attachment</button>
+
+</form>

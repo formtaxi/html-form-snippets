@@ -1,0 +1,112 @@
+<!--
+  Form.taxi – Multi-Step Form Snippet
+  =====================================
+  A wizard-style form with multiple steps (personal info, details, confirmation).
+  Uses vanilla JavaScript to show/hide steps. All data is submitted in a single
+  POST request at the end.
+
+  Setup:
+  1. Replace the action URL with your Form.taxi endpoint URL
+  2. Adjust fields and step labels to fit your use case
+  3. Adjust the _redirect URL to your thank-you page
+  4. Style the form to match your site's design
+
+  Docs: https://docs.form.taxi
+-->
+
+<form id="multistep-form" action="https://form.taxi/s/FORM_CODE" method="POST">
+
+  <!-- Spam protection: honeypot field. Keep this hidden. -->
+  <input type="text" name="_honeypot" style="display:none" tabindex="-1" autocomplete="off">
+
+  <!-- Optional: redirect after successful submission -->
+  <input type="hidden" name="_redirect" value="https://yoursite.com/thank-you">
+
+  <!-- Step 1: Personal Info -->
+  <fieldset class="form-step" data-step="1">
+    <legend>Step 1 – Personal Information</legend>
+
+    <div>
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+
+    <div>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+
+    <div>
+      <label for="phone">Phone (optional)</label>
+      <input type="tel" id="phone" name="phone">
+    </div>
+
+    <button type="button" onclick="goToStep(2)">Next</button>
+  </fieldset>
+
+  <!-- Step 2: Details -->
+  <fieldset class="form-step" data-step="2" style="display:none">
+    <legend>Step 2 – Your Request</legend>
+
+    <div>
+      <label for="category">Category</label>
+      <select id="category" name="category" required>
+        <option value="">– Please select –</option>
+        <option value="general">General Inquiry</option>
+        <option value="support">Support</option>
+        <option value="partnership">Partnership</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+    </div>
+
+    <button type="button" onclick="goToStep(1)">Back</button>
+    <button type="button" onclick="goToStep(3)">Next</button>
+  </fieldset>
+
+  <!-- Step 3: Confirmation -->
+  <fieldset class="form-step" data-step="3" style="display:none">
+    <legend>Step 3 – Confirm &amp; Send</legend>
+
+    <p>Please review your information before submitting.</p>
+
+    <div>
+      <label>
+        <input type="checkbox" name="consent" value="yes" required>
+        I agree that my data will be processed to handle my request.
+      </label>
+    </div>
+
+    <button type="button" onclick="goToStep(2)">Back</button>
+    <button type="submit">Submit</button>
+  </fieldset>
+
+</form>
+
+<script>
+function goToStep(step) {
+  // Validate current visible step before advancing
+  const currentStep = document.querySelector('.form-step:not([style*="display:none"])');
+  if (currentStep) {
+    const currentStepNum = parseInt(currentStep.dataset.step);
+    if (step > currentStepNum) {
+      const inputs = currentStep.querySelectorAll('[required]');
+      for (const input of inputs) {
+        if (!input.checkValidity()) {
+          input.reportValidity();
+          return;
+        }
+      }
+    }
+  }
+
+  document.querySelectorAll('.form-step').forEach(function(el) {
+    el.style.display = 'none';
+  });
+  document.querySelector('[data-step="' + step + '"]').style.display = 'block';
+}
+</script>

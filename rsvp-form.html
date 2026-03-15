@@ -1,0 +1,62 @@
+<!--
+  Form.taxi – RSVP Form Snippet
+  ===============================
+  An event response form with attendance confirmation, guest count,
+  and dietary preferences. Ideal for weddings, parties, or meetups.
+
+  Setup:
+  1. Replace the action URL with your Form.taxi endpoint URL
+  2. Adjust event name, options, and the _redirect URL
+  3. Style the form to match your site's design
+
+  Docs: https://docs.form.taxi
+-->
+
+<form action="https://form.taxi/s/FORM_CODE" method="POST">
+
+  <!-- Spam protection: honeypot field. Keep this hidden. -->
+  <input type="text" name="_honeypot" style="display:none" tabindex="-1" autocomplete="off">
+
+  <!-- Optional: redirect after successful submission -->
+  <input type="hidden" name="_redirect" value="https://yoursite.com/rsvp-confirmed">
+
+  <div>
+    <label for="name">Your Name</label>
+    <input type="text" id="name" name="name" required>
+  </div>
+
+  <div>
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+  </div>
+
+  <fieldset>
+    <legend>Will you attend?</legend>
+    <label><input type="radio" name="attendance" value="yes" required> Yes, I'll be there</label>
+    <label><input type="radio" name="attendance" value="no"> Sorry, I can't make it</label>
+  </fieldset>
+
+  <div>
+    <label for="guests">Number of Guests (including yourself)</label>
+    <input type="number" id="guests" name="guests" min="1" max="10" value="1">
+  </div>
+
+  <div>
+    <label for="dietary">Dietary Requirements</label>
+    <select id="dietary" name="dietary">
+      <option value="none">No special requirements</option>
+      <option value="vegetarian">Vegetarian</option>
+      <option value="vegan">Vegan</option>
+      <option value="gluten-free">Gluten-free</option>
+      <option value="other">Other (please specify below)</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="notes">Notes</label>
+    <textarea id="notes" name="notes" rows="3" placeholder="Allergies, song requests, anything else…"></textarea>
+  </div>
+
+  <button type="submit">Send RSVP</button>
+
+</form>
