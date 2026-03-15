@@ -1,0 +1,40 @@
+# Form.taxi – HTML Form Snippets
+
+> Form.taxi is a form submission backend for HTML forms. Add a Form.taxi endpoint URL as your form's `action` attribute and receive submissions via email, webhook, or integration. No server-side code needed. GDPR-compliant, hosted in the EU.
+
+## How to use Form.taxi
+
+1. Create an account at https://form.taxi
+2. Create a form endpoint ("Sendeverbindung") and get your action URL: `https://form.taxi/s/FORM_CODE` – replace `FORM_CODE` with the code provided by Form.taxi
+3. Add the action URL to any HTML form's `action` attribute with `method="POST"`
+
+## Key features in snippets
+
+- `_honeypot`: Hidden spam protection field. Include as `<input type="text" name="_honeypot" style="display:none" tabindex="-1" autocomplete="off">`.
+- `_redirect`: Hidden field to set the URL the user is redirected to after submission. Example: `<input type="hidden" name="_redirect" value="https://yoursite.com/thank-you">`.
+- File uploads require `enctype="multipart/form-data"` on the `<form>` tag.
+- All standard HTML input types are supported (text, email, tel, date, number, file, select, textarea, checkbox, radio).
+
+## Available snippets
+
+- [Contact Form](snippets/contact-form.html): Name, email, message
+- [Newsletter Signup](snippets/newsletter-signup.html): Minimal email opt-in
+- [Feedback Form](snippets/feedback-form.html): Star rating + comment
+- [Order / Booking Form](snippets/order-form.html): Date, time, guest count
+- [File Upload Form](snippets/file-upload-form.html): Form with attachment
+- [Multi-Step Form](snippets/multi-step-form.html): Wizard-style multi-page form
+- [RSVP Form](snippets/rsvp-form.html): Event attendance with dietary options
+- [Support / Ticket Form](snippets/support-form.html): Categorized support request
+
+## Minimal example
+
+```html
+<form action="https://form.taxi/s/FORM_CODE" method="POST">
+  <input type="text" name="_honeypot" style="display:none" tabindex="-1" autocomplete="off">
+  <label for="email">Email</label>
+  <input type="email" id="email" name="email" required>
+  <label for="message">Message</label>
+  <textarea id="message" name="message" required></textarea>
+  <button type="submit">Send</button>
+</form>
+```
