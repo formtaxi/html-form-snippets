@@ -1,6 +1,6 @@
 # Form.taxi – HTML Form Snippets
 
-Ready-to-use HTML form snippets that submit data via [Form.taxi](https://form.taxi), a privacy-focused form backend for static sites, landing pages, and any HTML-based project.
+Ready-to-use HTML form snippets that submit data via [Form.taxi](https://form.taxi/en/backend), a privacy-focused form backend for static sites, landing pages, and any HTML-based project.
 
 ## What is Form.taxi?
 
@@ -8,12 +8,12 @@ Ready-to-use HTML form snippets that submit data via [Form.taxi](https://form.ta
 
 - Works with any static site, CMS, or framework that renders HTML
 - GDPR-compliant, hosted in the EU
-- Supports file uploads, spam protection, custom redirects, autoresponders, and more
+- Supports file uploads, spam protection, custom redirects, autoresponders, and [more](https://form.taxi/de/features)
 
 ## How It Works
 
 1. Create a free account at [form.taxi](https://form.taxi)
-2. Set up a form endpoint (called "Sendeverbindung") and get your action URL
+2. Set up a form endpoint and get your action URL
 3. Copy one of the snippets below into your HTML
 4. Replace the `action` URL with your personal Form.taxi endpoint URL
 
@@ -23,7 +23,7 @@ Your Form.taxi endpoint URL follows this pattern:
 https://form.taxi/s/FORM_CODE
 ```
 
-`FORM_CODE` is provided by Form.taxi when you create a new form endpoint ("Sendeverbindung"). Replace it with your actual code.
+`FORM_CODE` is provided by Form.taxi when you create a new form endpoint. Replace it with your actual code.
 
 ## Snippets
 
