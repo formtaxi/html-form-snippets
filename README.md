@@ -40,8 +40,8 @@ https://form.taxi/s/FORM_CODE
 
 ## Features Demonstrated
 
-- **Spam protection** via honeypot field (`_honeypot`)
-- **Custom redirect** after submission (`_redirect`)
+- **Spam protection** via honeypot field (`_gotcha`)
+- **Custom redirect** after submission (`_next`)
 - **Required fields** with HTML5 validation
 - **File uploads** with `enctype="multipart/form-data"`
 - **Accessible markup** with proper `<label>` associations and ARIA attributes
