@@ -12,10 +12,9 @@ Ready-to-use HTML form snippets that submit data via [Form.taxi](https://form.ta
 
 ## How It Works
 
-1. Create a free account at [form.taxi](https://form.taxi)
-2. Set up a form endpoint and get your action URL
-3. Copy one of the snippets below into your HTML
-4. Replace the `action` URL with your personal Form.taxi endpoint URL
+1. Set up a form endpoint and get your action URL at [Form.taxi](https://form.taxi/panel/create-endpoint)
+2. Copy one of the snippets below into your HTML
+3. Replace the `action` URL with your personal Form.taxi endpoint URL
 
 Your Form.taxi endpoint URL follows this pattern:
 
