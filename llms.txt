@@ -5,7 +5,7 @@
 ## How to use Form.taxi
 
 1. Create an account at https://form.taxi
-2. Create a form endpoint ("Sendeverbindung") and get your action URL: `https://form.taxi/s/FORM_CODE` – replace `FORM_CODE` with the code provided by Form.taxi
+2. Create a form endpoint and get your action URL: `https://form.taxi/s/FORM_CODE` – replace `FORM_CODE` with the code provided by Form.taxi
 3. Add the action URL to any HTML form's `action` attribute with `method="POST"`
 
 ## Key features in snippets
@@ -25,6 +25,11 @@
 - [Multi-Step Form](snippets/multi-step-form.html): Wizard-style multi-page form
 - [RSVP Form](snippets/rsvp-form.html): Event attendance with dietary options
 - [Support / Ticket Form](snippets/support-form.html): Categorized support request
+
+## More for AI agents
+
+- [AGENTS.md](AGENTS.md): Detailed instructions for AI coding agents – using the snippets, creating an endpoint via API, and maintaining this repository
+- [API: Create endpoint](https://docs.form.taxi/APIs/CreateEndpoint/): `POST https://form.taxi/api/v1/create-endpoint` creates an account and form endpoint and returns `endpoint_url`
 
 ## Minimal example
 
